@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "BetaTester": {
+      "title": "BetaTester",
+      "description": "Information about registered beta testers and their 30-day trials",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Email address of the beta tester"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full display name of the beta tester"
+        },
+        "joinedAt": {
+          "type": "integer",
+          "description": "Timestamp when the tester signed up (millisecond Unix epoch)"
+        },
+        "trialEndsAt": {
+          "type": "integer",
+          "description": "Timestamp when the tester's 30-day trial expires (millisecond Unix epoch)"
+        }
+      },
+      "required": ["email", "name", "joinedAt", "trialEndsAt"]
+    }
+  },
+  "firestore": {
+    "beta_testers/{userId}": {
+      "schema": "BetaTester",
+      "description": "Beta testers tracked by their Firebase Auth User ID"
+    }
+  }
+}

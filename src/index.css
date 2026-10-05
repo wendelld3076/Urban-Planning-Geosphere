@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+.font-urban-script {
+  font-family: 'Brigherdz Urban Script', 'Brigherdz', 'Caveat', 'Great Vibes', 'Dancing Script', cursive;
+}
+
+/* Custom fine-grained scrollbar styling for slick glass look */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Cesium Widget default overrides for extreme premium layout */
+.cesium-viewer-bottom {
+  display: none !important;
+}
+
+.cesium-viewer-geocoder-container {
+  display: none !important;
+}
+
+/* Sidebar Light Theme Overrides (Isolated from 3D viewport canvas) */
+.sidebar-theme-light {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  color: #0f172a !important; /* slate-900 */
+  border-color: #e2e8f0 !important; /* slate-200 */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Convert all dark backgrounds to bright executive finishes */
+.sidebar-theme-light [class*="bg-slate-"],
+.sidebar-theme-light [class*="bg-black"],
+.sidebar-theme-light .bg-slate-900,
+.sidebar-theme-light .bg-slate-950,
+.sidebar-theme-light .bg-slate-950\/40,
+.sidebar-theme-light .bg-slate-900\/50,
+.sidebar-theme-light .bg-slate-900\/40,
+.sidebar-theme-light .bg-slate-900\/80,
+.sidebar-theme-light .bg-slate-950\/80,
+.sidebar-theme-light .bg-slate-950\/60,
+.sidebar-theme-light .bg-slate-950\/95,
+.sidebar-theme-light [class*="bg-slate-900"],
+.sidebar-theme-light [class*="bg-slate-950"] {
+  background-color: #f8fafc !important; /* bg-slate-50 */
+  color: #0f172a !important;
+}
+
+/* Override borders to clear crisp slate line values */
+.sidebar-theme-light [class*="border-white"],
+.sidebar-theme-light [class*="border-slate-800"],
+.sidebar-theme-light .border-white\/10,
+.sidebar-theme-light .border-white\/5 {
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+/* Ensure absolute input fields & dropdowns readability with light background styling */
+.sidebar-theme-light input[type="text"],
+.sidebar-theme-light input[type="password"],
+.sidebar-theme-light input[type="number"],
+.sidebar-theme-light select,
+.sidebar-theme-light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important; /* slate-300 */
+}
+
+.sidebar-theme-light input::placeholder {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+/* Invert scrollbar slider colors for readability */
+.sidebar-theme-light .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.15) !important;
+}
+
+.sidebar-theme-light .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3) !important;
+}
+
+/* Universal text overrides inside light sidebar container for high-contrast */
+.sidebar-theme-light h1,
+.sidebar-theme-light h2,
+.sidebar-theme-light h3,
+.sidebar-theme-light h4,
+.sidebar-theme-light h5,
+.sidebar-theme-light h6,
+.sidebar-theme-light .text-white,
+.sidebar-theme-light .text-slate-100,
+.sidebar-theme-light .text-slate-200 {
+  color: #0f172a !important; /* slate-900 */
+}
+
+.sidebar-theme-light .text-slate-300,
+.sidebar-theme-light .text-slate-400 {
+  color: #334155 !important; /* slate-700 */
+}
+
+.sidebar-theme-light .text-slate-500 {
+  color: #475569 !important; /* slate-600 */
+}
+
+/* Target elements with text-white/90 specifically */
+.sidebar-theme-light .text-white\/90 {
+  color: #0f172a !important;
+}
+
+/* Ensure secondary list and dropdown items convert hover and states perfectly */
+.sidebar-theme-light .hover\:bg-white\/5:hover,
+.sidebar-theme-light .hover\:bg-slate-800:hover,
+.sidebar-theme-light .hover\:bg-slate-900:hover,
+.sidebar-theme-light .hover\:bg-white\/10:hover {
+  background-color: #e2e8f0 !important; /* slate-200 */
+  color: #0f172a !important;
+}
+
+/* Tab button background & border fixes */
+.sidebar-theme-light .bg-white\/5,
+.sidebar-theme-light .bg-white\/10 {
+  background-color: #f1f5f9 !important; /* slate-100 */
+  border-color: #cbd5e1 !important;
+}
+
+.sidebar-theme-light .border-white\/5,
+.sidebar-theme-light .border-white\/10 {
+  border-color: #cbd5e1 !important;
+}
+
+.sidebar-theme-light .text-slate-400.hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+/* Active tab state highlights should not be overridden */
+.sidebar-theme-light .bg-blue-600 {
+  background-color: #2563eb !important; /* blue-600 */
+  color: #ffffff !important;
+}
+
+.sidebar-theme-light .bg-amber-600 {
+  background-color: #d97706 !important; /* amber-600 */
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Cesium InfoBox Premium Glassmorphic Styling
+   ========================================================================== */
+.cesium-infoBox {
+  background-color: rgba(15, 23, 42, 0.85) !important; /* deep slate-900 glass */
+  backdrop-filter: blur(12px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+  top: auto !important;
+  bottom: 56px !important;
+  right: 16px !important;
+  height: 400px !important;
+  max-height: calc(100vh - 120px) !important;
+  width: 320px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-family: var(--font-sans) !important;
+  z-index: 1000 !important;
+  overflow: hidden !important;
+}
+
+/* Light theme adaptor dynamically based on sidebar style state */
+body:has(.sidebar-theme-light) .cesium-infoBox {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1) !important;
+}
+
+.cesium-infoBox-title {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  font-family: var(--font-sans) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  padding: 14px 44px 14px 16px !important;
+  text-shadow: none !important;
+}
+
+body:has(.sidebar-theme-light) .cesium-infoBox-title {
+  background-color: rgba(15, 23, 42, 0.02) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0f172a !important;
+}
+
+.cesium-infoBox-close-btn {
+  top: 10px !important;
+  right: 10px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px !important;
+  color: #94a3b8 !important;
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 26px !important;
+  text-align: center !important;
+  transition: all 0.15s ease !important;
+  font-size: 16px !important;
+}
+
+.cesium-infoBox-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+body:has(.sidebar-theme-light) .cesium-infoBox-close-btn {
+  background: rgba(15, 23, 42, 0.05) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  color: #64748b !important;
+}
+
+body:has(.sidebar-theme-light) .cesium-infoBox-close-btn:hover {
+  background: rgba(15, 23, 42, 0.1) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+.cesium-infoBox-description {
+  margin: 0 !important;
+  padding: 8px !important;
+  height: calc(100% - 50px) !important;
+  overflow: hidden !important;
+}
+
+.cesium-infoBox-iframe {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Custom Dynamic Viewport Cursors for 3D GIS Viewport */
+.viewport-cursor-default,
+.viewport-cursor-default *,
+.viewport-cursor-default canvas,
+.viewport-cursor-default .cesium-widget canvas,
+#cesium-container.viewport-cursor-default canvas {
+  cursor: default !important;
+}
+
+.viewport-cursor-pan,
+.viewport-cursor-pan *,
+.viewport-cursor-pan canvas,
+.viewport-cursor-pan .cesium-widget canvas,
+#cesium-container.viewport-cursor-pan canvas {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjMDI4NGM3IiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOCAxMVY2YTIgMiAwIDAgMC00IDB2NU0xNCAxMFY0YTIgMiAwIDAgMC00IDB2Nk0xMCAxMC41VjVhMiAyIDAgMCAwLTQgMHY5TTYgMTR2LTJhMiAyIDAgMCAwLTQgMHY2YTcgNyAwIDAgMCA3IDdoNGE3IDcgMCAwIDAgNy03di01YTIgMiAwIDAgMC00IDB2MiIvPjwvc3ZnPg==') 12 12, grabbing !important;
+}
+
+.viewport-cursor-orbit,
+.viewport-cursor-orbit *,
+.viewport-cursor-orbit canvas,
+.viewport-cursor-orbit .cesium-widget canvas,
+#cesium-container.viewport-cursor-orbit canvas {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI5IiBzdHJva2U9IiMwMjg0YzciIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSIyIDIiLz48ZWxsaXBzZSBjeD0iMTIiIGN5PSIxMiIgcng9IjkiIHJ5PSI0IiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0yMSAxMmwtMi0ybTIgMmwtMiAyIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTMgMTJsMi0ybTItMmwyIDIiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIyLjUiIGZpbGw9IiMwMjg0YzciLz48L3N2Zz4=') 16 16, move !important;
+}
+
+.viewport-cursor-zoom,
+.viewport-cursor-zoom *,
+.viewport-cursor-zoom canvas,
+.viewport-cursor-zoom .cesium-widget canvas,
+#cesium-container.viewport-cursor-zoom canvas {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI3IiBmaWxsPSJyZ2JhKDE0LDE2NSwyMzMsMC4yNSkiIHN0cm9rZT0iIzAyODRjNyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48bGluZSB4MT0iMTYuNSIgeTE9IjE2LjUiIHgyPSIyMSIgeTI9IjIxIiBzdHJva2U9IiMwMjg0YzciIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjExIiB5MT0iOCIgeDI9IjExIiB5Mj0iMTQiIHN0cm9rZT0iIzM4YmRmOCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iOCIgeTE9IjExIiB4Mj0iMTQiIHkyPSIxMSIgc3Ryb2tlPSIjMzhiZGY4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==') 11 11, zoom-in !important;
+}
+
+.viewport-cursor-pencil,
+.viewport-cursor-pencil *,
+.viewport-cursor-pencil canvas,
+.viewport-cursor-pencil .cesium-widget canvas,
+#cesium-container.viewport-cursor-pencil canvas {
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj48cGF0aCBkPSJNMTcgM2EyLjgyOCAyLjgyOCAwIDEgMSA0IDRMNy41IDIwLjUgMiAyMmwxLjUtNS41TDE3IDN6IiBmaWxsPSIjMjU2M2ViIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Im0xNSA1IDQgNCIgc3Ryb2tlPSJ3aXRlIiBzdHJva2Utd2lkdGg9IjEuNSIvPjwvc3ZnPg==') 2 22, crosshair !important;
+}
+
+.viewport-cursor-pencil,
+.viewport-cursor-pencil *,
+.viewport-cursor-pencil canvas,
+.viewport-cursor-pencil .cesium-widget canvas {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="%232563eb" stroke="white" stroke-width="1.5"/><path d="m15 5 4 4" stroke="white" stroke-width="1.5"/></svg>') 2 22, crosshair !important;
+}
+
+
+

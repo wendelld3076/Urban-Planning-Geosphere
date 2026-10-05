@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Reusable global helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isValidBetaTester(data) {
+      return data.keys().hasAll(['email', 'name', 'joinedAt', 'trialEndsAt'])
+        && data.keys().size() == 4
+        && data.email is string
+        && data.email.size() <= 256
+        && data.name is string
+        && data.name.size() <= 256
+        && data.joinedAt is int
+        && data.trialEndsAt is int;
+    }
+
+    match /beta_testers/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow create: if isOwner(userId) && isValidId(userId) && isValidBetaTester(incoming());
+    }
+  }
+}

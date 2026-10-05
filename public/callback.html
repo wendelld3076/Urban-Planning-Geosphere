@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ArcGIS Login Callback</title>
+</head>
+<body style="font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #0f172a; color: #f1f5f9;">
+  <div style="text-align: center; padding: 20px;">
+    <h3 style="margin-bottom: 10px;">Authenticating with ArcGIS...</h3>
+    <p style="color: #94a3b8; font-size: 14px;">This window should close automatically.</p>
+  </div>
+  <script>
+    if (window.opener) {
+      // Send the hash fragment containing the access token to the parent window
+      window.opener.postMessage(window.location.hash, window.location.origin);
+      // Close the popup window
+      window.close();
+    } else {
+      document.querySelector('h3').textContent = "Authentication complete!";
+      document.querySelector('p').textContent = "You can safely close this window now.";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Urban Planning Geospehere Vbeta 0.5",
+  "description": "A clean, modern full-screen 3D geospatial web application using React, Vite, and CesiumJS with token management and glassmorphism sidebar UI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
