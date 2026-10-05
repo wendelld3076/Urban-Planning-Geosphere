@@ -1,6 +1,6 @@
-# 3D Geospatial Web Application
+# 3D Geospatial Web Application - Urban Planning Geosphere
 
-A clean, modern, and high-performance **3D Geospatial Web Application** built with **React**, **Vite**, **TypeScript**, and **CesiumJS**.
+A clean, modern, and high-performance **3D Geospatial Web Application** built with **React**, **Vite**, **TypeScript**, **CesiumJS**, and **ArcGIS REST Imagery Services**.
 
 ## Features
 
